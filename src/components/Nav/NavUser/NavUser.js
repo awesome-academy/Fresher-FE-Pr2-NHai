@@ -1,68 +1,38 @@
-import { Box, Link } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import { random } from 'lodash';
-import { menuData, color } from '../../../utils/constants';
+import { List, Box, Link, ThemeProvider, ListItem } from '@mui/material';
+import { menuUser } from '../../../utils/constants';
+import theme from './NavUser.styles';
 
-function getBgcolor(url) {
-  return url === '/FAQ' ? color.black : color.orange;
+function getBgcolor(url, color1, color2) {
+  return url === '/FAQ' ? color1 : color2;
 }
 
 function MenuItems() {
-  return menuData.menuUser.map(({ text, url }) => {
+  return menuUser.map(({ text, url }) => {
     return (
-      <Box
-        component='li'
-        key={random(true)}
-        sx={{
-          alignSelf: 'stretch',
-          listStyle: 'none',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
+      <ListItem key={random(true)}>
         <Link
-          href={url}
-          sx={{
-            textDecoration: 'none',
-            color: color.white,
-            bgcolor: getBgcolor(url),
-            fontWeight: 200,
-            borderRadius: 1,
-            p: 0.5,
-            fontSize: '18px'
-          }}
+          component={RouterLink}
+          to={url}
+          bgcolor={getBgcolor(url, theme.otherColors.black, theme.palette.primary.light)}
         >
           {text}
         </Link>
-      </Box>
+      </ListItem>
     );
   });
 }
 
 function NavUser() {
   return (
-    <Box
-      component='nav'
-      sx={{
-        display: 'flex',
-        alignSelf: 'stretch',
-        pr: 2
-      }}
-    >
-      <Box
-        component='ul'
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          alignSelf: 'stretch',
-          columnGap: 2,
-          p: 0
-        }}
-      >
-        <MenuItems />
+    <ThemeProvider theme={theme}>
+      <Box component='nav' pr='1rem'>
+        <List>
+          <MenuItems />
+        </List>
       </Box>
-    </Box>
+    </ThemeProvider>
   );
 }
 

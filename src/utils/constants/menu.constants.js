@@ -36,4 +36,31 @@ const menuUser = [
   }
 ];
 
-export default { menuNav, menuUser };
+const menuFooter = [
+  {
+    url: '/contact',
+    text: 'Điều khoản chung'
+  },
+  {
+    url: '/contact',
+    text: 'Chính Sách Thanh Toán'
+  },
+  {
+    url: '/contact',
+    text: 'Chính Sách Bảo Mật'
+  },
+  {
+    url: '/contact',
+    text: 'Chính Sách Bảo Mật'
+  },
+  {
+    url: '/contact',
+    text: 'Chính Sách Thanh Toán'
+  },
+  {
+    url: '/contact',
+    text: 'Điều khoản chung'
+  }
+];
+
+export { menuNav, menuUser, menuFooter };

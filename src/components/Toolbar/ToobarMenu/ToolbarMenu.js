@@ -1,22 +1,25 @@
-import { Toolbar, Link, Box } from '@mui/material';
-import { image, color } from '../../../utils/constants';
+import { Link as RouterLink } from 'react-router-dom';
+import { Toolbar, Link, Box, ThemeProvider } from '@mui/material';
+import { logo } from '../../../utils/constants';
 import { NavMenu } from '../../Nav';
+import theme from './ToolbarMenu.styles';
+
+function Logo() {
+  return (
+    <Link component={RouterLink} to='/'>
+      <Box component='img' src={logo.first.url} alt={logo.first.alt} />
+    </Link>
+  );
+}
 
 function ToolbarMenu() {
   return (
-    <Toolbar
-      variant='dense'
-      sx={{
-        display: 'flex',
-        bgcolor: color.white,
-        justifyContent: 'space-between'
-      }}
-    >
-      <Link href='/'>
-        <Box component='img' src={image.url} alt={image.alt} />
-      </Link>
-      <NavMenu />
-    </Toolbar>
+    <ThemeProvider theme={theme}>
+      <Toolbar>
+        <Logo />
+        <NavMenu />
+      </Toolbar>
+    </ThemeProvider>
   );
 }
 

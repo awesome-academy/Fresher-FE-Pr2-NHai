@@ -1,5 +1,4 @@
-import color from './color.constants';
-import image from './image.constants';
-import menuData from './menu.constants';
+import { image, logo } from './image.constants';
+import { menuFooter, menuNav, menuUser } from './menu.constants';
 
-export { color, image, menuData };
+export { image, menuFooter, menuNav, menuUser, logo };

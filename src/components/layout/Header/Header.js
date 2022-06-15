@@ -1,7 +1,7 @@
-import NavBar from '../navigation/Appbar/Appbar';
+import AppBar from '../navigation/Appbar/Appbar';
 
 function Header() {
-  return <NavBar />;
+  return <AppBar />;
 }
 
 export default Header;

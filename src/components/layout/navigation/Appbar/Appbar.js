@@ -1,12 +1,15 @@
-import { AppBar } from '@mui/material';
+import { AppBar, ThemeProvider } from '@mui/material';
 import { ToolbarMenu, ToolbarUser } from '../../../Toolbar';
+import appBarTheme from './Appbar.styles';
 
 function NavBar() {
   return (
-    <AppBar position='static' sx={{ bgcolor: '#fff' }}>
-      <ToolbarUser />
-      <ToolbarMenu />
-    </AppBar>
+    <ThemeProvider theme={appBarTheme}>
+      <AppBar>
+        <ToolbarUser />
+        <ToolbarMenu />
+      </AppBar>
+    </ThemeProvider>
   );
 }
 
