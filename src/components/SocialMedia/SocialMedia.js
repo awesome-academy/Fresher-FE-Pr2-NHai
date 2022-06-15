@@ -1,46 +1,37 @@
 import { random } from 'lodash';
-import { Box, Link } from '@mui/material';
-import { Google, Twitter, Pinterest, LinkedIn, Facebook } from '@mui/icons-material';
-import { color } from '../../utils/constants';
+import { Box, Link, List, ListItem, ThemeProvider } from '@mui/material';
+import { Facebook, Google, Twitter, Pinterest, LinkedIn } from '@mui/icons-material';
+import Proptypes from 'prop-types';
+import { Link as RouterLink } from 'react-router-dom';
+import socialMediaTheme from './SocialMedia.styles';
 
-function IconItems() {
+function IconItems({ cssIcon }) {
   const icons = [Facebook, Google, Twitter, Pinterest, LinkedIn];
 
   return icons.map((Icon) => {
     return (
-      <Box key={random(true)} component='li'>
-        <Link href='/'>
-          <Icon
-            sx={{
-              color: color.black,
-              bgcolor: color.white,
-              borderRadius: 1,
-              fontSize: 'inherit'
-            }}
-          />
+      <ListItem key={random(true)}>
+        <Link component={RouterLink} to='/'>
+          <Icon sx={{ ...cssIcon }} />
         </Link>
-      </Box>
+      </ListItem>
     );
   });
 }
 
-function SocialMedia() {
+function SocialMedia({ cssUl, cssIcon }) {
   return (
-    <Box>
-      <Box
-        component='ul'
-        sx={{
-          listStyle: 'none',
-          display: 'flex',
-          columnGap: 1.5,
-          fontSize: 'inherit',
-          p: 0
-        }}
-      >
-        <IconItems />
-      </Box>
-    </Box>
+    <ThemeProvider theme={socialMediaTheme}>
+      <List sx={{ ...cssUl }}>
+        <IconItems cssIcon={cssIcon} />
+      </List>
+    </ThemeProvider>
   );
 }
+
+SocialMedia.propTypes = {
+  cssUl: Proptypes.oneOfType([Proptypes.object]),
+  cssIcon: Proptypes.oneOfType([Proptypes.object])
+};
 
 export default SocialMedia;

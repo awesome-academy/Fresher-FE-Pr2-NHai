@@ -1,6 +1,20 @@
 const logo = {
-  url: 'https://starlight.vn/Content/img/logo.png',
-  alt: 'Star movies'
+  first: {
+    url: 'https://starlight.vn/Content/img/logo.png',
+    alt: 'Star movies'
+  },
+
+  second: {
+    url: 'https://starlight.vn/Content/img/footer_logo.png',
+    alt: 'Star movies white'
+  }
 };
 
-export default logo;
+const image = {
+  bgs2: {
+    url: 'https://starlight.vn/Content/img/bgs2.jpg',
+    alt: 'footer'
+  }
+};
+
+export { logo, image };

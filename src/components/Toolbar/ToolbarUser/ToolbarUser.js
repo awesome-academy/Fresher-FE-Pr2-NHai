@@ -1,22 +1,16 @@
-import { Toolbar } from '@mui/material';
+import { ThemeProvider, Toolbar } from '@mui/material';
 import SocialMedia from '../../SocialMedia/SocialMedia';
 import { NavUser } from '../../Nav';
-import { color } from '../../../utils/constants';
+import theme from './ToolbarUser.styles';
 
 function ToolbarUser() {
   return (
-    <Toolbar
-      variant='dense'
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        bgcolor: color.black,
-        pr: 4
-      }}
-    >
-      <SocialMedia />
-      <NavUser />
-    </Toolbar>
+    <ThemeProvider theme={theme}>
+      <Toolbar>
+        <SocialMedia />
+        <NavUser />
+      </Toolbar>
+    </ThemeProvider>
   );
 }
 

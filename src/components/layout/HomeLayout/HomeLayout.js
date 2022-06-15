@@ -4,11 +4,10 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 function HomeLayout() {
-
   return (
     <Container maxWidth='lg'>
       <Header />
-      <Outlet/>
+      <Outlet />
       <Footer />
     </Container>
   );
