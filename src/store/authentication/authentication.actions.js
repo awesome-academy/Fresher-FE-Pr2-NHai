@@ -1,7 +1,8 @@
-export function setToken() {
-  return null;
+import { remove } from '../../services/localStorage/localStorage';
+
+function logout(state) {
+  remove('token');
+  state.isLoggedIn = false;
 }
 
-export function deleteToken() {
-  return null;
-}
+export default logout;

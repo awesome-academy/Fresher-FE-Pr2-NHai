@@ -1,9 +1,9 @@
-const localStorage = {
-  add(key) {
-    localStorage.add(key);
+const storage = {
+  get(key) {
+    localStorage.getItem(key);
   },
   remove(key) {
-    localStorage.remove(key);
+    localStorage.removeItem(key);
   },
   set(key, value) {
     localStorage.setItem(key, value);
@@ -13,6 +13,6 @@ const localStorage = {
   }
 };
 
-export const { add, clear, remove, setStorage } = localStorage;
+export const { get, clear, remove, set } = storage;
 
-export default localStorage;
+export default storage;
