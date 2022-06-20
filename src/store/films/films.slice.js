@@ -12,9 +12,9 @@ const filmSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [getFilms.fulfilled]: (state, action) => {
+    [getFilms.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
-      state.films = action.payload.data;
+      state.films = [...payload];
     },
 
     [getFilms.pending]: (state) => {

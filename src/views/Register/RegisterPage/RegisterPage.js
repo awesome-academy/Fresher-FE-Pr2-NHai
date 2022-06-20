@@ -1,12 +1,12 @@
-import { ThemeProvider, Alert, Snackbar } from '@mui/material';
-import { AuthenLayout, FormLayout } from '../../../components/layout';
+import { ThemeProvider, Snackbar, Alert } from '@mui/material';
+import { FormLayout, AuthenLayout } from '../../../components/layout';
 import { Logo } from '../../../components';
-import Form from '../LoginForm/LoginForm';
-import theme from './LoginPage.styles';
+import Form from '../RegisterForm/RegisterForm';
+import theme from './RegisterPage.styles';
 import useMuiStatusError from '../../../hooks/useMuiStatusError';
 
-function LoginPage() {
-  const [status, { handleClose, setStatus }] = useMuiStatusError();
+function RegisterPage() {
+  const [status, { handleClose }] = useMuiStatusError();
 
   const { error, open } = status;
 
@@ -19,15 +19,14 @@ function LoginPage() {
           </Alert>
         </Snackbar>
       )}
-
       <AuthenLayout>
-        <Logo text='Đăng nhập với tài khoản của bạn' />
+        <Logo text='Đăng ký thành viên và nhận ngay ưu đãi!' />
         <FormLayout>
-          <Form onSetStatus={setStatus} />
+          <Form />
         </FormLayout>
       </AuthenLayout>
     </ThemeProvider>
   );
 }
 
-export default LoginPage;
+export default RegisterPage;

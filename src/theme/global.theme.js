@@ -14,10 +14,20 @@ const globalTheme = createTheme({
         }
       }
     },
-
     MuiLink: {
       defaultProps: {
         underline: 'none'
+      }
+    },
+    MuiSnackbar: {
+      defaultProps: {
+        anchorOrigin: { horizontal: 'center', vertical: 'top' },
+        autoHideDuration: 2500
+      }
+    },
+    MuiTextField: {
+      defaultProps: {
+        size: 'small'
       }
     }
   },
@@ -33,6 +43,11 @@ const globalTheme = createTheme({
     },
     background: {
       default: '#fff'
+    }
+  },
+  legend: {
+    authen: {
+      color: 'green'
     }
   },
   otherColors: {
