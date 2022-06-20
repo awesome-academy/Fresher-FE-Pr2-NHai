@@ -16,7 +16,7 @@ import { DoubleArrow, PlayArrow, Apple } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 import { logo, menuFooter as menuData } from '../../../utils/constants';
 import SocialMedia from '../../SocialMedia/SocialMedia';
-import ButtonApp from '../../Button/Button';
+import { ButtonApp } from '../../Button/Button';
 import theme from './Footer.styles';
 
 function Logo() {
@@ -58,9 +58,7 @@ function Menu() {
         {menuData.map(({ url, text }) => (
           <ListItem key={random(true)} disablePadding>
             <Link component={RouterLink} to={url} variant='footer-links'>
-              <ListItemIcon
-                sx={{ minWidth: 'auto', color: 'inherit', fontSize: 'inherit' }}
-              >
+              <ListItemIcon sx={{ minWidth: 'auto', color: 'inherit', fontSize: 'inherit' }}>
                 <DoubleArrow fontSize='inherit' />
               </ListItemIcon>
               <ListItemText disableTypography primary={text} />
@@ -182,7 +180,7 @@ function Footer() {
           <DownloadApps />
         </Stack>
         <Box textAlign='center' paddingBottom='1rem'>
-          2022 &copy; StarLight. All Rights Reserved - Validated By
+          2022 &copy; StarLight. All Rights Reserved - Design By
           <Typography component='span' variant='copyright'>
             &nbsp;VietDzNo1
           </Typography>

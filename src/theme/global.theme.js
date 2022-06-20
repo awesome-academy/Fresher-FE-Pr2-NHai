@@ -14,6 +14,7 @@ const globalTheme = createTheme({
         }
       }
     },
+
     MuiLink: {
       defaultProps: {
         underline: 'none'
@@ -36,8 +37,11 @@ const globalTheme = createTheme({
   },
   otherColors: {
     black: '#22272B',
+    gray: '#495057',
     white: '#fff',
-    cyan: '#5DB3BE'
+    cyan: '#5DB3BE',
+    purple: '#7B82A7',
+    orangeLight: '#f7ac85'
   }
 });
 

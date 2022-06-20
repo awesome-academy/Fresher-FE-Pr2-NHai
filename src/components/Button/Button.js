@@ -1,7 +1,14 @@
-import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  Button as ButtonMui,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ThemeProvider
+} from '@mui/material';
 import PropTypes from 'prop-types';
+import theme from './Button.styles';
 
-function ButtonApp({ children, cssConfig }) {
+export function ButtonApp({ children, cssConfig }) {
   const { cssListItemButton, cssListItemIcon, cssListItemText } = cssConfig;
 
   return (
@@ -17,4 +24,15 @@ ButtonApp.propTypes = {
   cssConfig: PropTypes.oneOfType([PropTypes.any])
 };
 
-export default ButtonApp;
+export function Button({ text, config }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <ButtonMui {...config}>{text}</ButtonMui>
+    </ThemeProvider>
+  );
+}
+
+Button.propTypes = {
+  config: PropTypes.oneOfType([PropTypes.object]),
+  text: PropTypes.string
+};
