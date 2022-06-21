@@ -1,8 +1,8 @@
 import { remove } from '../../services/localStorage/localStorage';
 
-function logout(state) {
+function removeToken(state) {
   remove('token');
   state.isLoggedIn = false;
 }
 
-export default logout;
+export default removeToken;

@@ -1,5 +1,5 @@
 import {
-  Button as ButtonMui,
+  ButtonBase,
   ListItemButton,
   ListItemIcon,
   ListItemText,
@@ -27,7 +27,7 @@ ButtonApp.propTypes = {
 export function Button({ text, config }) {
   return (
     <ThemeProvider theme={theme}>
-      <ButtonMui {...config}>{text}</ButtonMui>
+      <ButtonBase {...config}>{text}</ButtonBase>
     </ThemeProvider>
   );
 }
