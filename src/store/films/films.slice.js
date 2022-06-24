@@ -1,15 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getFilms } from './films.thunk';
 
-export const initialState = {
-  films: [],
-  isLoading: false,
-  error: null
-};
-
-const filmSlice = createSlice({
-  name: 'film',
-  initialState,
+export const filmsSlice = createSlice({
+  name: 'films',
+  initialState: {
+    films: [],
+    isLoading: false,
+    error: null
+  },
   reducers: {},
   extraReducers: {
     [getFilms.fulfilled]: (state, { payload }) => {
@@ -21,11 +19,11 @@ const filmSlice = createSlice({
       state.isLoading = true;
     },
 
-    [getFilms.rejected]: (state, action) => {
+    [getFilms.rejected]: (state, { payload }) => {
       state.isLoading = false;
-      state.error = action.payload.error;
+      state.error = payload.toString();
     }
   }
 });
 
-export default filmSlice.reducer;
+export default filmsSlice.reducer;
